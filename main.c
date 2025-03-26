@@ -92,14 +92,14 @@ void isSub(char s[]){
 	else{
 		int broke = 0;
 		int seq = 0;
-		for(int i = 0; i < len(s); i++){
-			if(s[i] == s2[i]){
+		for(int i = 0; i <= len(s); i++){
+			if(s[i] == s2[seq]){
 				seq++;
 			}
 			else{
 				seq = 0;
 			}
-			if(seq == len(s2)){
+			if(seq == len(s2)-1){
 				broke = 1;
 				break;
 			}
