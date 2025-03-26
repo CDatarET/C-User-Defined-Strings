@@ -75,6 +75,43 @@ void palindrome(char s[]){
 		printf("string is a palindrome\n");
 	}
 }
+void isSub(char s[]){
+	printf("Enter length of second string\n");
+	int l2;
+	scanf("%d", &l2);
+	char s2[l2+1];
+	s2[l2] = '\0';
+	for(int i = 0; i < l2; i++){
+		printf("enter char at %d\n",i);
+		scanf(" %c", &s2[i]);
+	}
+	
+	if(len(s2) > len(s)){
+		printf("Second string is not substring of string 1\n");
+	}
+	else{
+		int broke = 0;
+		int seq = 0;
+		for(int i = 0; i < len(s); i++){
+			if(s[i] == s2[i]){
+				seq++;
+			}
+			else{
+				seq = 0;
+			}
+			if(seq == len(s2)){
+				broke = 1;
+				break;
+			}
+		}
+		if(broke){
+			printf("Second string is substring of string 1\n");
+		}
+		else{
+			printf("Second string is not substring of string 1\n");
+		}
+	}
+}
 
 int main(){
 	char yn = 'y';
@@ -113,9 +150,10 @@ int main(){
 			
 			case 4:
 			palindrome(s);
-			
 			break;
 			
+			case 5:
+			isSub(s);
 		}
 		
 		printf("\nperform another operation? y/n\n");
